@@ -16,13 +16,13 @@ spec:
       - name: mongodb
         image: mongo:3.6.5-jessie
         volumeMounts:
-        - name: persistent-mongo
+        - name: persistent-mongo-storage
           mountPath: /data/db
         # env:
         # - name: SPRING_PROFILES_ACTIVE
         #   value: production-microservice
       volumes:
-      - name: persistent-mongo
+      - name: persistent-mongo-storage
         persistentVolumeClaim:
           claimName: mongo-pvc
 
